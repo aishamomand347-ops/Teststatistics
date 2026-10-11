@@ -9,14 +9,16 @@ public class TextInput {
         while (true) {
             String text = scanner.nextLine();
 
-            if (text.equals("stop")) {
+            if (!statistik.laggTillRad(text)) {
                 break;
             }
-
-            statistik.laggTillRad(text);
         }
 
         System.out.println("Antal rader: " + statistik.hamtaAntalRader());
         System.out.println("Antal tecken: " + statistik.hamtaAntalTecken());
+        System.out.println("Antal ord: " + statistik.hamtaAntalOrd());
+        System.out.println("Langsta ord: " + statistik.hamtaLangstaOrd());
+
+        scanner.close();
     }
 }
